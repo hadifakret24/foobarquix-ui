@@ -1,0 +1,6 @@
+<div class="well">
+    <div *ngFor="let instruction of instructions">
+        <h3>{{instruction.text}}</h3>
+        <img class="img-fluid img-thumbnail"  [src]="instruction.path">
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <form [formGroup] = "inputNumberForm" >
+    <input type='text' class="form-control" [(ngModel)]="inputNumber" formControlName="inputNumber" value="inputNumber"/>
+    <div *ngIf="!inputNumberForm.controls['inputNumber'].valid && inputNumberForm.controls['inputNumber'].touched">
+      <div *ngIf="inputNumberForm.controls['inputNumber'].errors.required" style="background-color: red">
+        The input number is required
+      </div>
+      <div *ngIf="inputNumberForm.controls['inputNumber'].errors.pattern" style="background-color: red">
+        Only Numbers are allowed
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="submitNumber()" [disabled]="inputNumberForm.invalid">Convert</button>
+  </form>
+
+</div>
